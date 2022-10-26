@@ -15,7 +15,7 @@
             <!-- bootstrap -->
       </head>
       <body>
-            <section class="vh-100" style="background-color: rgb(73, 238, 197)">
+            <section class="vh-100" style="background-color: rgb(73, 238, 197); cursor: pointer">
                   <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                               <div class="col col-xl-10">
@@ -41,8 +41,10 @@
                                                                               type="text"
                                                                               id="cityinput"
                                                                               class="form-control form-control-lg"
+                                                                              onkeyup="numberFun()"
                                                                         />
-                                                                        <label class="form-label" id="name"
+
+                                                                        <label class="form-label" id="errorname"
                                                                               >city name</label
                                                                         >
                                                                   </div>
@@ -52,24 +54,23 @@
                                                                               class="btn btn-info btn-lg btn-block"
                                                                               type="button"
                                                                               id="add"
+                                                                              onclick="weatherFunction()"
                                                                         >
                                                                               FIND YOUR CITY'S WEATHER
                                                                         </button>
                                                                   </div>
 
                                                                   <div class="d-flex justify-content-center">
-                                                                        <h3 id="cityoutput">Weather in Alappey</h3>
+                                                                        <h3 id="cityoutput"></h3>
                                                                   </div>
                                                                   <div class="d-flex justify-content-center">
-                                                                        <h4 id="description">
-                                                                              Sky Conditions: scattered clouds
-                                                                        </h4>
+                                                                        <h4 id="description"></h4>
                                                                   </div>
                                                                   <div class="d-flex justify-content-center">
-                                                                        <h4 id="temp">Temperature: 30.97 C</h4>
+                                                                        <h4 id="temp"></h4>
                                                                   </div>
                                                                   <div class="d-flex justify-content-center">
-                                                                        <h4 id="wind">Wind Speed: 3.67 km/h</h4>
+                                                                        <h4 id="wind"></h4>
                                                                   </div>
                                                             </form>
                                                       </div>
