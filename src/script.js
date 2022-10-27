@@ -39,8 +39,11 @@ const numberFun = () => {
 
 
 //api connection
-apik = "3045dd712ffe6e702e3245525ac7fa38";
 
+
+
+apik = "3045dd712ffe6e702e3245525ac7fa38";
+setInterval(function () {
 btn.addEventListener('click', function(){
                 fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputval.value+'&appid='+apik)
                 .then(res => res.json())
@@ -51,6 +54,7 @@ btn.addEventListener('click', function(){
                     description.innerHTML = `Sky Conditions: <span>${ data.weather[0].description ? data.weather[0].description : "Not available" }<span>`
                     wind.innerHTML = `Wind Speed: <span>${data.wind.speed ? data.wind.speed:"Not available"} km/h<span>`
                 })
+                
                 .catch(err => {
                     errorName.innerHTML='You entered Wrong city name'
                    errorName.style.color = "red";   
@@ -58,4 +62,4 @@ btn.addEventListener('click', function(){
                 })
 })
        
-
+}, 5000);
